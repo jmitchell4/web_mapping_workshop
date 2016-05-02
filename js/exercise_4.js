@@ -138,6 +138,18 @@ function getDirections(frm, to) {
     // there is a library file instructor made to decode the byte array into geojson 
     var routeShape = polyline.decode(data.trip.legs[0].shape);
     console.log(routeShape);
+    console.error({
+      type: "Feature", 
+      geometry: {
+        type: "Line", 
+        coordinates: routeShape 
+      }, 
+      properties: {
+        "stroke": "#ffff00", 
+        "stroke-opacity": "0.5", 
+        "stroke-width": 8 
+      }
+    });
     routeLine.setGeoJSON({
       type: "Feature", 
       geometry: {
