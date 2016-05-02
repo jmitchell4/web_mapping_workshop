@@ -26,7 +26,8 @@ var featureLayer = L.mapbox.featureLayer();
 featureLayer.loadURL(dataFileToAdd);
 // add the new layer to the map from above 
 featureLayer.addTo(map);
-// add a listener to the layer 
+
+// add a listener to the layer to add points as icons 
 featureLayer.on('ready', function() {
   this.eachLayer(function(layer) {
     layer.setIcon(L.mapbox.marker.icon({
@@ -37,5 +38,12 @@ featureLayer.on('ready', function() {
   });
   
   map.fitBounds(featureLayer.getBounds());
+});
+
+// add another listener to ... 
+featureLayer.on('ready', function() {
+  this.eachLayer(function(layer) {
+    layer.bindPopup('Welcome to ' + layer.feature.properties.name);
+  });
 });
 
