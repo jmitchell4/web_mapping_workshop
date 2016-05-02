@@ -142,7 +142,7 @@ function getDirections(frm, to) {
     var json = {
       type: "Feature", 
       geometry: {
-        type: "Line", 
+        type: "LineString", 
         coordinates: routeShape 
       }, 
       properties: {
@@ -152,7 +152,7 @@ function getDirections(frm, to) {
       }
     };
     console.error(json);
-    //routeLine.setGeoJSON(json); // setGeoJSON 
+    routeLine.setGeoJSON(json); // setGeoJSON 
     
   }) // done 
   ;
