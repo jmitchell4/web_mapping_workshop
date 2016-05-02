@@ -67,6 +67,10 @@ featureLayer.on('ready', function() {
 
       }); // fadeIn 
       
+      var myGeoJSON = myLocation.getGetJSON();
+      
+      getDirections(myGeoJSON.geometry.coordinates, feature.geometry.coordiantes);
+            
     }; // clickHandler 
     
     // register a click event on each layer 
