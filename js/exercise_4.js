@@ -45,14 +45,18 @@ featureLayer.on('ready', function() {
   this.eachLayer(function(layer) {
     //layer.bindPopup('Welcome to ' + layer.feature.properties.name);
     
-    // {"@id":"node/3656191609","name":"Jade Garden","phone":"+1-919-594-1813","website":null,"cuisine":"chinese"}
     // layer.bindPopup(JSON.stringify(layer.feature.properties));
+    // {"@id":"node/3656191609","name":"Jade Garden","phone":"+1-919-594-1813","website":null,"cuisine":"chinese"}
     
-    layer.bindPopup('Welcome to ' + layer.feature.properties.name
-                   + "\n ID = " + layer.feature.properties.id
-                   + "\n Phone: " + layer.feature.properties.phone
-                   + "\n Website: <a href='" + layer.feature.properties.website + "'>" + layer.feature.properties.website + '</a>' 
-                   + "\n Cuisine: " + layer.feature.properties.cuisine);
+    var clickHandler = function(e) {
+      $('#info').empty();
+      
+      var feature = e.target.feature;
+      
+      $('#sidebar').fadeIn(500);
+      
+    });
+    
   });
 });
 
