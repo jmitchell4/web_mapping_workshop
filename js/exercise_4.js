@@ -106,4 +106,49 @@ map.on('locationfound', function(e) {
 // use mapbox feature to grab position from browser 
 map.locate({setView: true});
 
+// placeholder layer for route path 
+var routeLine = L.mapbox.featureLayer().addTo(map);
+
+// add directions by leveraging mapzen turn-by-turn directions 
+function getDirections(frm, to) {
+  var jsonPayload = JSON.stringify({ 
+    locations: [ 
+      { "lat": frm[1], "lon": frm[0] }, 
+      { "lat": to[1], "lon": to[0] }
+    ], 
+    costing: "pedestrian", 
+    units: "miles"
+  });
+  
+  $.ajax({ 
+    url: 'http://valhalla.mapzen.com/route', 
+    data: {
+      json: jsonPayload, 
+      api_key: 'valhalla-gwtf3x2' 
+    } // data 
+  })
+  .done(function(data) {
+    // the response is binary packed data 
+    // there is a library file instructor made to decode the byte array into geojson 
+    var routeShape = polyline.decode(data.trip.legs[0].shape);
+    routeLine.setGeoJSON({
+      type: "Feature", 
+      geometry: {
+        type: "Line", 
+        coordinates: routeShape 
+      }, 
+      properties: {
+        "stroke": "#ffff00", 
+        "stroke-opacity": "0.5", 
+        "stroke-width": 8 
+      }
+    }); // setGeoJSON 
+  }); // on 
+  
+  }) // done 
+  ;
+  
+}); // getDirections 
+
+
 
