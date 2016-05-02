@@ -34,11 +34,11 @@ featureLayer.on('ready', function() {
       "marker-color": "#ff0000", 
       "marker-size": "large", 
       "marker-symbol": "restaurant"
-    }));
-  });
+    })); // setIcon 
+  }); // eachLayer 
   
   map.fitBounds(featureLayer.getBounds());
-});
+}); // on 
 
 // add another listener to ... 
 featureLayer.on('ready', function() {
@@ -60,15 +60,16 @@ featureLayer.on('ready', function() {
         info += '<h2>' + feature.properties.name + '</h2>';
         if (feature.properties.cuisine) info += '<p>' + feature.properties.cuisine + '</p>';
         if (feature.properties.phone) info += '<p>' + feature.properties.phone  + '</p>';
-        if (feature.properties.website) info += '<p><a href="' + feature.properties.website + '</a>' + feature.properties.website + '</a></p>';
+        if (feature.properties.website) info += '<p><a href="' + feature.properties.website + '">' + feature.properties.website + '</a></p>';
         info += '</div>';
         
         $('#info').html(info);
 
-      });
+      }); // fadeIn 
       
-    });
+    }); // clickHandler 
     
-  });
-});
+  }); // eachLayer 
+  
+}); // on 
 
