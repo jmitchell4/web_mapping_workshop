@@ -67,7 +67,7 @@ featureLayer.on('ready', function() {
 
       }); // fadeIn 
       
-      var myGeoJSON = myLocation.getGetJSON();
+      var myGeoJSON = myLocation.getGeoJSON();
       
       getDirections(myGeoJSON.geometry.coordinates, feature.geometry.coordiantes);
             
