@@ -198,6 +198,10 @@ function getDirections(frm, to) {
       };
       routeHighlight.setGeoJSON(json);
       
+      $('.instruction').on('mouseout', function() {
+        routeHighlight.clearLayers();
+      }); // mouseout 
+      
     }); // mouseover 
     
   }) // done 
