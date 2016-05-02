@@ -78,9 +78,7 @@ featureLayer.on('ready', function() {
 
 // hide the sidebar when the map itself is clicked 
 map.on('click', function() {
-  
   $('#sidebar').fadeOut(250);
-  
 }); // on 
 
 
