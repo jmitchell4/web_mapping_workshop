@@ -69,7 +69,7 @@ featureLayer.on('ready', function() {
       
       var myGeoJSON = myLocation.getGeoJSON();
       
-      getDirections(myGeoJSON.geometry.coordinates, feature.geometry.coordiantes);
+      getDirections(myGeoJSON.geometry.coordinates, feature.geometry.coordinates);
             
     }; // clickHandler 
     
