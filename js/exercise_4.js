@@ -51,8 +51,8 @@ featureLayer.on('ready', function() {
     layer.bindPopup('Welcome to ' + layer.feature.properties.name
                    + "\n ID = " + layer.feature.properties.id
                    + "\n Phone: " + layer.feature.properties.phone
-                   + "\n Cuisine: " + layer.feature.properties.cuisine
-                   + "\n Website: " + layer.feature.properties.website);
+                   + "\n Website: <a href='" + layer.feature.properties.website + "'>" + layer.feature.properties.website + '</a>' 
+                   + "\n Cuisine: " + layer.feature.properties.cuisine);
   });
 });
 
