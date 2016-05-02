@@ -185,4 +185,8 @@ function getDirections(frm, to) {
 }; // getDirections 
 
 
+map.on('click', function() {
+  routeLine.clearLayers();
+});
+
 
