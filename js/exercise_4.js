@@ -44,7 +44,15 @@ featureLayer.on('ready', function() {
 featureLayer.on('ready', function() {
   this.eachLayer(function(layer) {
     //layer.bindPopup('Welcome to ' + layer.feature.properties.name);
-    layer.bindPopup(JSON.stringify(layer.feature.properties));
+    
+    // {"@id":"node/3656191609","name":"Jade Garden","phone":"+1-919-594-1813","website":null,"cuisine":"chinese"}
+    // layer.bindPopup(JSON.stringify(layer.feature.properties));
+    
+    layer.bindPopup('Welcome to ' + layer.feature.properties.name
+                   + "\n ID = " + layer.feature.properties.id
+                   + "\n Phone: " + layer.feature.properties.phone
+                   + "\n Cuisine: " + layer.feature.properties.cuisine
+                   + "\n Website: " + layer.feature.properties.website);
   });
 });
 
