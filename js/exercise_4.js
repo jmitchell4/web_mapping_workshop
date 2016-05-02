@@ -53,7 +53,9 @@ featureLayer.on('ready', function() {
       
       var feature = e.target.feature;
       
-      $('#sidebar').fadeIn(500);
+      $('#sidebar').fadeIn(500, function() {
+        
+      });
       
     });
     
