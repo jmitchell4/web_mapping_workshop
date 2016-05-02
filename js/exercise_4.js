@@ -152,7 +152,7 @@ function getDirections(frm, to) {
       }
     };
     console.error(json);
-    routeLine.setGeoJSON(json); // setGeoJSON 
+    //routeLine.setGeoJSON(json); // setGeoJSON 
     
   }) // done 
   ;
