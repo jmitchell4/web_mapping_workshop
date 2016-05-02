@@ -150,7 +150,7 @@ function getDirections(frm, to) {
   }) // done 
   ;
   
-}); // getDirections 
+}; // getDirections 
 
 
 
