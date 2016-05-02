@@ -207,6 +207,7 @@ function getDirections(frm, to) {
 
 
 map.on('click', function() {
+  routeHighlight.clearLayers();
   routeLine.clearLayers();
 });
 
