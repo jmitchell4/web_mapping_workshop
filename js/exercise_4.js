@@ -112,6 +112,7 @@ map.locate({setView: true});
 
 // placeholder layer for route path 
 var routeLine = L.mapbox.featureLayer().addTo(map);
+var routeHighlight = L.mapbox.featureLayer().addTo(map);
 
 // add directions by leveraging mapzen turn-by-turn directions 
 function getDirections(frm, to) {
@@ -178,6 +179,26 @@ function getDirections(frm, to) {
       $('#summary').append(direction);
       
     }); // forEach 
+    
+    $('.instruction').on('mouseover', function() {
+      var begin = Number($(this).attr('data-begin'));
+      var end = Number($(this).attr('data-end'));
+      
+      var json = {
+        type: "Feature", 
+        geometry: {
+          type: begin === end ? "Point" : "LineString", 
+          coordinates: begin === end ? routeShape.slice(begin)[0] : routeShape.slice(begin, (end+1))
+        }, 
+        properties: {
+          "stroke": "#ffffff", 
+          "stroke-opacity": 0.5, 
+          "stroke-width": 10
+        }
+      };
+      routeHighlight.setGeoJSON(json);
+      
+    }); // mouseover 
     
   }) // done 
   ;
