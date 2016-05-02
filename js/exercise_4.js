@@ -63,7 +63,7 @@ featureLayer.on('ready', function() {
         if (feature.properties.website) info += '<p><a href="' + feature.properties.website + '">' + feature.properties.website + '</a></p>';
         info += '</div>';
         
-        $('#info').html(info);
+        $('#info').append(info);
 
       }); // fadeIn 
       
