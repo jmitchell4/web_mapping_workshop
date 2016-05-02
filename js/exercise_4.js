@@ -159,8 +159,8 @@ function getDirections(frm, to) {
       
       var summary = data.trip.summary;
       // since javascript only rounds to nearest integer, cheat and get 2 decimal places 
-      $('#distance').text(Math.round(summary.length * 100) / 100) + ' ' + data.trip.units);
-      $('#time').text();
+      $('#distance').text((Math.round(summary.length * 100) / 100) + ' ' + data.trip.units);
+      $('#time').text((Math.round(summary.time / 60 * 100) / 100) + ' minutes');
     });
     
   }) // done 
