@@ -151,7 +151,7 @@ function getDirections(frm, to) {
         "stroke-width": 8
       }
     };
-    console.error(json);
+    console.log(json);
     routeLine.setGeoJSON(json); // setGeoJSON 
     
   }) // done 
