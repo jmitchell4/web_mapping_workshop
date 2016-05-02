@@ -125,7 +125,7 @@ function getDirections(frm, to) {
   });
   
   $.ajax({ 
-    url: 'http://valhalla.mapzen.com/route', 
+    url: 'https://valhalla.mapzen.com/route', 
     data: {
       json: jsonPayload, 
       api_key: 'valhalla-gwtf3x2' 
