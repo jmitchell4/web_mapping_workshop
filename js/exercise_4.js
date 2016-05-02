@@ -144,6 +144,11 @@ function getDirections(frm, to) {
       geometry: {
         type: "Line", 
         coordinates: routeShape 
+      }, 
+      properties: {
+        "stroke": "#ffff00", 
+        "stroke-opacity": "0.5", 
+        "stroke-width": "8"
       }
     };
     console.error(json);
