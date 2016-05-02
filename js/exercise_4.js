@@ -69,6 +69,9 @@ featureLayer.on('ready', function() {
       
     }); // clickHandler 
     
+    // register a click event on each layer 
+    layer.on('click', clickHandler);
+    
   }); // eachLayer 
   
 }); // on 
