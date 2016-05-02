@@ -82,3 +82,28 @@ map.on('click', function() {
 }); // on 
 
 
+// now add location to the map in a new feature layer 
+var myLocation = L.mapbox.featureLayer()
+		.addTo(map);
+
+map.on('locationfound', function(e) {
+  // use the position from the handler to build a geojson for the point 
+  myLocation.setGeoJSON({
+    type: "Feature", 
+    geometry: {
+      type: "Point", 
+      coordinates: [ e.latlng.lng, e.latlng.lat ] 
+    }, 
+    properties: {
+      "title": "Here I am!", 
+      "marker-color": "#00ffff", 
+      "marker-size": "medium", 
+      "marker-symbol": "star" 
+    }
+  }); // setGeoJSON 
+}); // on 
+
+// use mapbox feature to grab position from browser 
+map.locate({setView: true});
+
+
