@@ -121,7 +121,7 @@ function getDirections(frm, to) {
       { "lat": to[1], "lon": to[0] }
     ], 
     costing: "pedestrian", 
-    directionOptions: {
+    direction_options: {
       units: "miles"
     }
   });
