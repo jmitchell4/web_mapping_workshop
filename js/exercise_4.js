@@ -147,8 +147,6 @@ function getDirections(frm, to) {
         "stroke-width": 8 
       }
     }); // setGeoJSON 
-  }); // on 
-  
   }) // done 
   ;
   
