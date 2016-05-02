@@ -132,6 +132,8 @@ function getDirections(frm, to) {
     } // data 
   })
   .done(function(data) {
+    console.log(data);
+    
     // the response is binary packed data 
     // there is a library file instructor made to decode the byte array into geojson 
     var routeShape = polyline.decode(data.trip.legs[0].shape);
